@@ -12,6 +12,8 @@ const Room = ({ id }) => {
   const peersRef = useRef([]);
   const roomID = id;
 
+  console.log(peers, roomID, peersRef)
+
   useEffect(() => {
     socketRef.current = io.connect("/");
     navigator.mediaDevices
@@ -83,6 +85,7 @@ const Room = ({ id }) => {
     return peer;
   }
 
+  console.log(peers)
   return (
     <div className="flex flex-col h-[100%] items-center justify-between px-2 py-2">
       <div className="flex-1 bg-slate-600 w-full p-2">
